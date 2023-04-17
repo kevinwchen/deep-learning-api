@@ -5,7 +5,7 @@ import tasks
 
 app = FastAPI()
 
-langueages = ["English", "French", "German", "Romanian"]
+languages = ["English", "French", "German", "Romanian"]
 
 class Translation(BaseModel):
     text: str
@@ -14,7 +14,7 @@ class Translation(BaseModel):
 
     @validator('base_lang', 'final_lang')
     def valid_lang(cls, lang):
-        if lang not in langueages:
+        if lang not in languages:
             raise ValueError("Invalid language")
         return lang
 
